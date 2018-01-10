@@ -36,6 +36,8 @@ public class ItemCursorAdapter extends CursorAdapter {
         String itemName = cursor.getString(nameColumnIndex);
 
         nameTextView.setText(itemName);
+        view.setTag(R.string.item, itemName);
 
     }
 }
+

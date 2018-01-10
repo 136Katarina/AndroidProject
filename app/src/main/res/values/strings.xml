@@ -1,16 +1,17 @@
 <resources>
     <string name="app_name">FoodTracker</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="action_delete_all_entries">Delete All Items</string>
 
-    +    <!-- Title text for the empty view, which describes the empty dog house image [CHAR LIMIT=50] -->
-    +    <string name="empty_view_title_text">Your List is empty</string>
-    +
-    +    <!-- Subtitle text for the empty view that prompts the user to add a pet [CHAR LIMIT=50] -->
-    +    <string name="empty_view_subtitle_text">Get started by adding a new item</string>
-    +
-    <!-- Title for the activity to add a new pet [CHAR LIMIT=20] -->
-    <string name="editor_activity_title_new_pet">Add New Item</string>
+
+    <string name="empty_view_title_text">Your List is empty</string>
+
+
+    <string name="empty_view_subtitle_text">Get started by adding a new item</string>
+
+
+    <string name="editor_activity_title_new_item">Add New Item</string>
+
+    <string name="item">ITEM</string>
+
 </resources>

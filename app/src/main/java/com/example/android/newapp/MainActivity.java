@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
@@ -21,11 +22,16 @@ import com.example.android.newapp.data.ItemDbHelper;
 public class MainActivity extends AppCompatActivity {
 
     private ItemDbHelper dbHelper;
+    private SQLiteDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ItemDbHelper itemDbHelper = new ItemDbHelper(this);
+
+        db = itemDbHelper.getWritableDatabase();
 
 
 
@@ -43,7 +49,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    ;
+    public void deleteItem(View listItem) {
+
+        String name = (String) listItem.getTag(R.string.item);
+
+        db.delete(ItemEntry.TABLE_NAME, ItemEntry.COL1 + "= '" + name + "'", null);
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
 
     @Override
     protected void onStart() {
