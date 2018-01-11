@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         dbHelper = new ItemDbHelper(this);
-
+        getTotalCalories();
     }
 
     public void onButtonCLicked(View button) {
@@ -75,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         displayDatabaseInfo();
         getTotalCalories();
+
     }
 
     private void getTotalCalories(){
@@ -86,6 +87,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
         displayTotalCalories(totalCalories);
+    }
+
+    private void displayTotalCalories(int totalCalories) {
+        TextView view = findViewById(R.id.total);
+        view.setText(Integer.toString(totalCalories));
     }
 
     private void displayDatabaseInfo() {
@@ -142,19 +148,19 @@ public class MainActivity extends AppCompatActivity {
 //    }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.options_menu, menu);
-
-        SearchManager searchManager =
-                (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-        SearchView searchView =
-                (SearchView) menu.findItem(R.id.search).getActionView();
-        searchView.setSearchableInfo(
-                searchManager.getSearchableInfo(getComponentName()));
-        return true;
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        MenuInflater inflater = getMenuInflater();
+//        inflater.inflate(R.menu.options_menu, menu);
+//
+//        SearchManager searchManager =
+//                (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+//        SearchView searchView =
+//                (SearchView) menu.findItem(R.id.search).getActionView();
+//        searchView.setSearchableInfo(
+//                searchManager.getSearchableInfo(getComponentName()));
+//        return true;
+//    }
 
 
 }
