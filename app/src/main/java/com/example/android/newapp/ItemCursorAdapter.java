@@ -35,11 +35,8 @@ public class ItemCursorAdapter extends CursorAdapter {
         int nameColumnIndex = cursor.getColumnIndex(ItemEntry.COL1);
         int servingColumnIndex = cursor.getColumnIndex(ItemEntry.COL2);
 
-
-
         String itemName = cursor.getString(nameColumnIndex);
         String itemServing = cursor.getString(servingColumnIndex);
-
 
         nameTextView.setText(itemName);
         view.setTag(R.string.item, itemName);
@@ -48,5 +45,6 @@ public class ItemCursorAdapter extends CursorAdapter {
         view.setTag(R.string.my_item, itemServing);
 
     }
+
 }
 

@@ -9,24 +9,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+
+
+        <activity android:name=".Welcome"
+            android:label="Welcome to My FoodTracker">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".EditActivity" />
+        <activity android:name=".MainActivity"
+            android:label="My Food List">
+
+        </activity>
+        <activity android:name=".EditActivity"
+            android:label="Add New"/>
         <activity android:name=".Test" />
-        <!--<activity android:name=".Content" />-->
+        <activity android:name=".Content"
+            android:label="Details"/>
         <activity android:name=".Detail" />
-        <activity android:name=".Welcome">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>

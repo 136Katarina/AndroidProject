@@ -26,11 +26,13 @@ public class MainActivity extends AppCompatActivity {
 
     private ItemDbHelper dbHelper;
     private SQLiteDatabase db;
+    private int totalCalories;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        this.totalCalories = 0;
 
         ItemDbHelper itemDbHelper = new ItemDbHelper(this);
 
@@ -48,8 +50,15 @@ public class MainActivity extends AppCompatActivity {
 
         dbHelper = new ItemDbHelper(this);
 
-
     }
+
+    public void onButtonCLicked(View button) {
+        Intent intent = new Intent(this, Content.class);
+        startActivity(intent);
+    }
+
+
+
 
     public void deleteItem(View listItem) {
 
@@ -65,6 +74,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         displayDatabaseInfo();
+        getTotalCalories();
+    }
+
+    private void getTotalCalories(){
+        Cursor totalCaloriesCursor = db.rawQuery("SELECT SUM("+ ItemEntry.COL2 +") AS TOTAL_CALORIES FROM " + ItemEntry.TABLE_NAME, null);
+
+
+        if( totalCaloriesCursor.moveToFirst()) {
+            totalCalories = totalCaloriesCursor.getInt(0);
+        }
+
+        displayTotalCalories(totalCalories);
     }
 
     private void displayDatabaseInfo() {
@@ -74,7 +95,8 @@ public class MainActivity extends AppCompatActivity {
                 ItemEntry._ID,
                 ItemEntry.COL1,
                 ItemEntry.COL2,
-                ItemEntry.COL3};
+                ItemEntry.COL3
+        };
 
         Cursor cursor = db.query(
                 ItemEntry.TABLE_NAME,
