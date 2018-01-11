@@ -1,5 +1,7 @@
 package com.example.android.newapp;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -12,6 +14,7 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toolbar;
 
@@ -32,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
         ItemDbHelper itemDbHelper = new ItemDbHelper(this);
 
         db = itemDbHelper.getWritableDatabase();
-
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -85,8 +87,6 @@ public class MainActivity extends AppCompatActivity {
         ListView itemListView = (ListView) findViewById(R.id.list);
 
 
-
-
         View emptyView = findViewById(R.id.empty_view);
         itemListView.setEmptyView(emptyView);
 
@@ -122,8 +122,17 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater menuInflater = getMenuInflater();
-        getMenuInflater().inflate(R.menu.main_menu, menu);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.options_menu, menu);
+
+        SearchManager searchManager =
+                (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        SearchView searchView =
+                (SearchView) menu.findItem(R.id.search).getActionView();
+        searchView.setSearchableInfo(
+                searchManager.getSearchableInfo(getComponentName()));
         return true;
     }
+
+
 }

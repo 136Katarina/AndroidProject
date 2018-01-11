@@ -30,13 +30,22 @@ public class ItemCursorAdapter extends CursorAdapter {
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
         TextView nameTextView = (TextView) view.findViewById(R.id.name);
+        TextView servingTextView = (TextView) view.findViewById(R.id.serving);
 
         int nameColumnIndex = cursor.getColumnIndex(ItemEntry.COL1);
+        int servingColumnIndex = cursor.getColumnIndex(ItemEntry.COL2);
+
+
 
         String itemName = cursor.getString(nameColumnIndex);
+        String itemServing = cursor.getString(servingColumnIndex);
+
 
         nameTextView.setText(itemName);
         view.setTag(R.string.item, itemName);
+        servingTextView.setText(itemServing);
+
+        view.setTag(R.string.my_item, itemServing);
 
     }
 }

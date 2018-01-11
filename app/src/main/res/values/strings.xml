@@ -13,5 +13,8 @@
     <string name="editor_activity_title_new_item">Add New Item</string>
 
     <string name="item">ITEM</string>
+    <string name="my_item">ITEM</string>
+    <string name="search_title">Search</string>
+    <string name="search_hint">Search</string>
 
 </resources>

@@ -20,5 +20,6 @@ public class ItemContract {
         public final static String COL2 = "serving";
         public final static String COL3 = "date";
 
+
     }
 }
