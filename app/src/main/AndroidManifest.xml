@@ -9,9 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-
-        <activity android:name=".Welcome"
+        <activity
+            android:name=".Welcome"
             android:label="My FoodTracker">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,17 +18,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"
-            android:label="My Food List">
-
-        </activity>
-        <activity android:name=".EditActivity"
-            android:label="Add New"/>
+        <activity
+            android:name=".MainActivity"
+            android:label="My Food List"></activity>
+        <activity
+            android:name=".EditActivity"
+            android:label="Add New" />
         <activity android:name=".Test" />
-        <activity android:name=".Content"
-            android:label="Details"/>
-        <activity android:name=".Detail" />
+        <activity
+            android:name=".Main2Activity"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
 
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

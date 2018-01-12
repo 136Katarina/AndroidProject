@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimary">@color/lightgreen</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="pink">#FFE1F0</color>
+    <color name="purple">#e4b0e8</color>
+    <color name="darkbrown">#33221a</color>
+    <color name="darkorange">#c07754</color>
+    <color name="darkred">#a85042</color>
+    <color name="grey">#4C4C4C</color>
+    <color name="lightgreen">#56b74a</color>
+    <color name="darkergreen">#065a05</color>
+    <color name="darkgreen">#004518</color>
+    <color name="blue">	#77d2df</color>
+    <color name="mygreen">#002300</color>
+    <color name="green_l">#1E2F1E</color>
+    <color name="white">#ffffff</color>
 
 </resources>

@@ -15,14 +15,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/total"
-            android:background="@color/colorPrimary"
+            android:background="@color/blue"
             android:layout_marginBottom="20dp"
             android:paddingBottom="20dp"
             android:paddingTop="20dp"
             android:paddingRight="15dp"
             android:paddingLeft="20dp"
             android:textSize="20sp"
-            android:textColor="#ff6666"
+            android:textColor="#ee1289"
             />
 
     <TextView
@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/calories"
         android:text="Calories consumed today "
-        android:background="@color/colorPrimary"
+        android:background="@color/blue"
         android:layout_marginBottom="20dp"
         android:paddingBottom="20dp"
         android:paddingTop="20dp"
@@ -77,11 +77,9 @@
             android:paddingTop="8dp"
             android:paddingLeft="10dp"
             android:text="@string/empty_view_subtitle_text"
-            android:textAppearance="?android:textAppearanceSmall"
+            android:textAppearance="?android:textAppearanceSmallInverse"
             android:textColor="#A2AAB0"/>
     </RelativeLayout>
-
-
 
 
 
@@ -91,6 +89,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_margin="20dp"/>
+        android:layout_margin="20dp"
+        android:src="@drawable/ic_action_add"
+        android:background="@color/mygreen"/>
+
+
+
 
 </RelativeLayout>

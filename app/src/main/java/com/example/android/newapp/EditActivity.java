@@ -2,6 +2,7 @@ package com.example.android.newapp;
 
 import android.app.DatePickerDialog;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -100,6 +101,14 @@ public class EditActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.edit_menu, menu);
         return true;
     }
+
+
+    public void onButtonCLicked(View button) {
+      insertItem();
+      finish();
+    }
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

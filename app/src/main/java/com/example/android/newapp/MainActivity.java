@@ -52,10 +52,10 @@ public class MainActivity extends AppCompatActivity {
         getTotalCalories();
     }
 
-    public void onButtonCLicked(View button) {
-        Intent intent = new Intent(this, Content.class);
-        startActivity(intent);
-    }
+//    public void onButtonCLicked(View button) {
+//        Intent intent = new Intent(this, Content.class);
+//        startActivity(intent);
+//    }
 
 
 
